@@ -9,19 +9,19 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class editFile {
-	static File fis = new File("C:\\Users\\BHM\\Desktop\\ÇĞ»ı¸íºÎ.txt");//¿­¾îº¼ ÆÄÀÏ °æ·ÎÀÔ·Â
+	static File fis = new File("C:\\Users\\BHM\\Desktop\\í•™ìƒëª…ë¶€.txt");//ì—´ì–´ë³¼ íŒŒì¼ ê²½ë¡œì…ë ¥
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
 		
 		while(true) {
-		System.out.println("1.ÆÄÀÏ Ãâ·ÂÇÏ±â 2.ÆÄÀÏ ÀÚ¹Ù·Î ºÒ·¯¿À±â 3.ºÒ·¯¿ÂÆÄÀÏ ¿øº»ÆÄÀÏ·Î ÀúÀåÇÏ±â 4.ÆÄÀÏ ¿­±â");
-		System.out.println("¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä : ");
+		System.out.println("1.íŒŒì¼ ì¶œë ¥í•˜ê¸° 2.íŒŒì¼ ìë°”ë¡œ ë¶ˆëŸ¬ì˜¤ê¸° 3.ë¶ˆëŸ¬ì˜¨íŒŒì¼ ì›ë³¸íŒŒì¼ë¡œ ì €ì¥í•˜ê¸° 4.íŒŒì¼ ì—´ê¸°");
+		System.out.println("ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš” : ");
 		int num = scanner.nextInt();
 		
 		switch(num) {
-		case 1 :
-			try(FileReader fis = new FileReader("C:\\Users\\BHM\\Desktop\\ÇĞ»ı¸íºÎ.txt")){
+		case 1 ://íŒŒì¼ ê²½ë¡œë¥¼ ì…ë ¥í•´ì„œ íŒŒì¼ì˜ ë‚´ìš©ì„ ì½˜ì†”ì— ì¶œë ¥í•œë‹¤
+			try(FileReader fis = new FileReader("C:\\Users\\BHM\\Desktop\\í•™ìƒëª…ë¶€.txt")){
 				int i;
 				while((i=fis.read()) != -1) {
 					System.out.print((char)i);
@@ -31,8 +31,8 @@ public class editFile {
 				e.printStackTrace();
 			}
 		break;
-		case 2 :
-		try(FileInputStream fis = new FileInputStream("C:\\Users\\BHM\\Desktop\\ÇĞ»ı¸íºÎ.txt");
+		case 2 ://íŒŒì¼ì„ ì¹´í”¼í•´ì„œ ìë°”ë¡œ txtë¬¸ì„œë¥¼ ë§Œë“¤ì–´ì„œ ê°€ì ¸ì˜¨ë’¤ txtë¬¸ì„œë¥¼ ì—´ì–´ì„œ í¸ì§‘í•œë‹¤.
+		try(FileInputStream fis = new FileInputStream("C:\\Users\\BHM\\Desktop\\í•™ìƒëª…ë¶€.txt");
 		FileOutputStream fos = new FileOutputStream("C:\\Users\\BHM\\eclipse-workspace\\term_project\\src\\term_project\\copy.txt")){
 			
 		int i;
@@ -42,11 +42,11 @@ public class editFile {
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println("ÆÄÀÏº¹»ç°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù. º¹»çÇÑ ÆÄÀÏÀ» ¿­¾î¼­ ÆíÁıÇÏ¼¼¿ä.");
+		System.out.println("íŒŒì¼ë³µì‚¬ê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤. ë³µì‚¬í•œ íŒŒì¼ì„ ì—´ì–´ì„œ í¸ì§‘í•˜ì„¸ìš”.");
 		break;
-		case 3 :
+		case 3 ://í¸ì§‘ì´ ì™„ë£Œëœ íŒŒì¼ì„ ì™¸ë¶€ì— ìˆëŠ” íŒŒì¼ë¡œ ë³µì‚¬í•´ì„œ ì €ì¥í•œë‹¤.
 			try(FileInputStream fis = new FileInputStream("C:\\Users\\BHM\\eclipse-workspace\\term_project\\src\\term_project\\copy.txt");
-			FileOutputStream fos = new FileOutputStream("C:\\Users\\BHM\\Desktop\\ÇĞ»ı¸íºÎ.txt")){
+			FileOutputStream fos = new FileOutputStream("C:\\Users\\BHM\\Desktop\\í•™ìƒëª…ë¶€.txt")){
 				
 			int i;
 			while(( i = fis.read( ))!=-1){
@@ -55,14 +55,14 @@ public class editFile {
 			}catch(IOException e) {
 				e.printStackTrace();
 			}
-			System.out.println("ÆíÁıÇÑ ÆÄÀÏÀ» ¿øº»µ¥ÀÌÅÍ¿¡ ÀúÀå½ÃÄ×½À´Ï´Ù.");
+			System.out.println("í¸ì§‘í•œ íŒŒì¼ì„ ì›ë³¸ë°ì´í„°ì— ì €ì¥ì‹œì¼°ìŠµë‹ˆë‹¤.");
 			break;
-		case 4 :
+		case 4 ://ì™¸ë¶€ì— ìˆëŠ” íŒŒì¼ì„ ì—´ì–´ë³¸ë‹¤. ë§Œì•½ íŒŒì¼ì´ ì—†ë‹¤ë©´ ë§Œë“¤ì–´ì„œ ì—°ë‹¤.
 			try {
 				if(fis.exists()) {
 				Desktop.getDesktop().edit(fis);
 				}
-				else {
+				else { //íŒŒì¼ì´ ì—†ìœ¼ë©´ ì ì–´ë…¼ ê²½ë¡œì— ë§Œë“¤ì–´ì„œ ì—°ë‹¤
 					fis.createNewFile();
 					Desktop.getDesktop().edit(fis);
 				}
