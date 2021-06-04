@@ -12,8 +12,6 @@ public class editFile {
 	static File fis = new File("C:\\Users\\BHM\\Desktop\\학생명부.txt");//열어볼 파일 경로입력
 	public static void main(String[] args) {
 		
-		
-		loadFile a = new loadFile();
 		Scanner scanner = new Scanner(System.in);
 		
 		while(true) {
